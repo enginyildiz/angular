@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html ng-app="mobileApp">
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+		<title>Burokrat Haber</title>
+ 
+		<link type="text/css" rel="stylesheet" href="demo.css" />
+		<link type="text/css" rel="stylesheet" href="src/css/jquery.mmenu.css" />
+		<link type="text/css" rel="stylesheet" href="src/css/extensions/jquery.mmenu.widescreen.css" media="all and (min-width: 900px)" />
+		<link type="text/css" rel="stylesheet" href="src/css/extensions/jquery.mmenu.themes.css" media="all and (min-width: 900px)" />
+                <link type="text/css" rel="stylesheet" href="src/css/idangerous.swiper.css">
+		<style type="text/css">
+			@media all and (min-width: 900px) {
+				html, body {
+					height: 100%;
+				}
+				#menu {
+					background: #eee;
+				}
+				#page {
+					border-left: 1px solid #ccc;
+					min-height: 100%;
+				}
+				/* hide open-button */
+				a[href="#menu"]
+				{
+					display: none !important;
+				}
+            }
+			  .swiper-container {
+				width: 100%;
+				color: #fff;
+				text-align: center;
+			  }
+
+			  .pagination {
+				position: absolute;
+				z-index: 20;
+				left: 5px;
+				bottom: 5px;
+			  }
+			  .swiper-pagination-switch {
+				display: inline-block;
+				width: 8px;
+				height: 8px;
+				border-radius: 8px;
+				background: #222;
+				margin-right: 5px;
+				opacity: 0.8;
+				border: 1px solid #fff;
+				cursor: pointer;
+			  }
+			  .swiper-visible-switch {
+				background: #aaa;
+			  }
+			  .swiper-active-switch {
+				background: #fff;
+			  }
+
+		</style>
+		<script type="text/javascript">
+          var _gaq = _gaq || []; 
+          _gaq.push(['_setAccount', 'UA-33183776-1']);
+          _gaq.push(['_setDomainName', 'burokrathaber.com']);
+          _gaq.push(['_setAllowLinker', true]);
+          _gaq.push(['_trackPageview']);
+    
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+    
+		</script>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		
+                <script type="text/javascript" src="src/js/jquery.mmenu.js"></script>
+                <script type="text/javascript" src="src/js/angular.js"></script>
+                <script type="text/javascript" src="src/js/angular-raute.js"></script>
+				<script type="text/javascript" src="src/js/angular-sanitize.js"></script>
+                <script type="text/javascript" src="src/js/scroll.js"></script>
+                <script type="text/javascript" src="app/app.js"></script>
+                <script type="text/javascript" src="app/controller.js"></script>
+				<script type="text/javascript">			
+					$(function() {
+						var $menu = $('nav#menu');	
+						$menu.mmenu({
+							position	: 'left',
+							classes		: 'mm-light',
+						});
+					});
+					var closeMenu = function() {
+						$("nav#menu").trigger("close");
+					}
+					
+					
+
+				</script>
+
+	</head>
+	<body>
+		<div id="page">
+			<div id="header">
+				<a href="#menu"></a>
+					<img src="logo.png" width="" height="35px" style="margin:4px 10px 0 10px; float:left;"/>
+					<a href="#/" class="right"></a>
+			</div>
+			<div id="content" ng-view>
+                           
+			</div>
+                        
+			<nav id="menu">
+				<ul>
+					<li class="Selected"><a href="/#/category/4" onclick="closeMenu()">SİYASET</a></li>
+					<li><a href="/#/category/11" onclick="closeMenu()">GÜNDEM</a></li>
+					<li><a href="/#/category/7" onclick="closeMenu()">EKONOMİ</a></li>
+					<li><a href="/#/category/8" onclick="closeMenu()">DÜNYA</a></li>
+					<li><a href="/#/category/9" onclick="closeMenu()">YAŞAM</a></li>
+					<li><a href="/#/category/10" onclick="closeMenu()">EMLAK</a></li>
+					<li><a href="/#/category/14" onclick="closeMenu()">SPOR</a></li>
+					<li><a href="/#/category/16" onclick="closeMenu()">EĞİTİM</a></li>
+					<li><a href="/#/category/17" onclick="closeMenu()">SAĞLIK</a></li>
+					<li><a href="/#/category/15" onclick="closeMenu()">TEKNOLOJİ</a></li>
+					<li><a href="/#/category/13" onclick="closeMenu()">OTOMOBİL</a></li>
+					<li><a href="/#/category/21" onclick="closeMenu()">MAGAZİN</a></li>
+					<li><a href="/#/special/ankara" onclick="closeMenu()">ANKARANIN NABZI</a></li>
+				</ul>
+			</nav>
+		</div>
+		
+	</body>
+</html>

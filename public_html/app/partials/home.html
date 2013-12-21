@@ -1,0 +1,58 @@
+<div class="swiper-container">
+    <div class="swiper-wrapper" ng-controller="homeController">
+      <div class="swiper-slide" ng-repeat="item in news_slider" complate>
+
+		<a href="#news/{{item.id}}">
+			<h1 class="slider-head">{{item.title}}</h1>
+			<img src="http://www.burokrathaber.com/images/timthumb.php?src=/upload/{{item.image}}&w=480&h=240&zc=0"/>
+			
+		</a>
+		
+      </div>
+    </div>
+    <div class="pagination"></div>
+</div>
+<div class="article-list" ng-controller="homeController">
+    <ul>
+        <li ng-repeat="item in news_under">
+			<a href="#news/{{item.id}}">
+			<img src="http://www.burokrathaber.com/images/timthumb.php?src=/upload/{{item.image}}&w=150&h=80&zc=0" />
+            <h2>{{item.title}}</h2>
+            <p>{{item.summary}}</p>
+			<a/>
+        </li>
+
+    </ul> 
+</div>
+<div ng-controller='loadNews'>
+    <div class="article-list" infinite-scroll='news.nextPage()' infinite-scroll-disabled='news.busy' infinite-scroll-distance='1'>
+      <ul>
+        <li ng-repeat="item in news.items">
+			<a href="#news/{{item.id}}">
+            <img src="http://www.burokrathaber.com/images/timthumb.php?src=/upload/{{item.image}}&w=150&h=80&zc=0" />
+            <h2>{{item.title}}</h2>
+            <p>{{item.summary}}</p>
+			</a>
+        </li>
+
+      </ul> 
+        <div ng-show='news.busy'><center><img src="loading.gif" width="32px" height="32px"></center></div>
+    </div>
+</div>
+
+<script src="src/js/idangerous.swiper-2.1.min.js"></script>
+<script>
+	$( window ).resize(function() {
+		$('.swiper-container').height($('.swiper-container').width()*0.5);
+	});
+	function showSlider() {
+		setTimeout(function(){
+			var mySwiper = new Swiper('.swiper-container',{
+				pagination: '.pagination',
+				paginationClickable: true
+			});
+			$('.swiper-container').height($('.swiper-container').width()*0.5);		
+		},50); 
+	}
+	
+</script>

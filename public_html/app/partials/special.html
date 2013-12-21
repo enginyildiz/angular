@@ -1,0 +1,15 @@
+<div ng-controller='specialController'>
+    <div class="article-list" infinite-scroll='special_news.nextPage()' infinite-scroll-disabled='special_news.busy' infinite-scroll-distance='1'>
+      <ul>
+        <li ng-repeat="item in special_news.items">
+			<a href="#news/{{item.id}}">
+            <img src="http://www.burokrathaber.com/images/timthumb.php?src=/upload/{{item.image}}&w=150&h=80&zc=0" />
+            <h2>{{item.title}}</h2>
+            <p>{{item.summary}}</p>
+			</a>
+        </li>
+
+      </ul> 
+        <div ng-show='special_news.busy'><center><img src="loading.gif" width="32px" height="32px"></center></div>
+    </div>
+</div>

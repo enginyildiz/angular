@@ -1,0 +1,6 @@
+<div class="article" ng-cotroller="newsDetail">
+	<h1>{{news_detail.title}}</h1>
+	<img ng-src="http://www.burokrathaber.com/images/timthumb.php?src=/upload/{{news_detail.image}}&w=480&h=240&zc=0" imageonload style="display:none"/>
+	<h2>{{news_detail.summary}}</h2>
+	<div ng-bind-html="news_detail.content">{{news_detail.content}}</div>
+</div>
